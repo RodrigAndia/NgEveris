@@ -1,0 +1,31 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Pera",
+            "descripcion": "El rincon de Soto",
+            "precio": 12.34,
+            "imagen": "assets/img/producto.png",
+            "categoria": "Fruta",
+            "cantidad": 10
+        },
+        {
+            "id": 2,
+            "nombre": "Kiwi",
+            "descripcion": "Zespri",
+            "precio": 2.34,
+            "imagen": "assets/img/producto.png",
+            "categoria": "Fruta",
+            "cantidad": 10
+        },
+        {
+            "id": 5,
+            "nombre": "Melocotones",
+            "descripcion": "Natur",
+            "precio": "3.55",
+            "imagen": "assets/img/producto.png",
+            "categoria": "Fruta",
+            "cantidad": 10
+        }
+    ]
+}

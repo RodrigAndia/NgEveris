@@ -1,0 +1,12 @@
+<div class="card mt-5 mb-5">
+    <div class="card-body">
+        <h4>Carrito de compra</h4>
+        <aside *ngFor="let item of productoService.lista_compras">
+            <div>
+                <p class="col-md-4 d-flex pr-3 mt-3">Nombre:{{item.nombre}} </p>
+                <button class="btn btn-primary btn-sm" (click)="productoService.eliminar(item.id)">-</button> Cantidad:{{item.cantidad}}
+                <button class="btn btn-primary btn-sm" (click)="productoService.comprar(item.id)">+</button>
+            </div>
+        </aside>
+    </div>
+</div>

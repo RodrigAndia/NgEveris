@@ -1,0 +1,22 @@
+<div class="card mt-5 mb-5" *ngFor="let item of productoService.lista_productos">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{item.imagen}} class="img-fluid rounded-start" alt={{item.nombre}}>
+    </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="col-6">{{item.nombre}}</span>
+          </h5>
+          <p class="card-text">
+            <span class="col-7">Descripción: {{item.descripcion}}</span>
+            <br>
+            <span class="col-4">Precio: {{item.precio}}</span>
+            <br>
+            <span class="col-4">Cantidad: {{item.cantidad}}</span>
+          </p>
+          <button class="btn btn-primary" (click)="productoService.comprar(item.id)">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
