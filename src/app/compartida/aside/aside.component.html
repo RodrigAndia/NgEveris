@@ -8,5 +8,7 @@
                 <button class="btn btn-primary btn-sm" (click)="productoService.comprar(item.id)">+</button>
             </div>
         </aside>
+        <br>
+        <button *ngIf="productoService.show_buy" class="btn btn-primary btn-sm" (click)="enviarDatos(productoService.lista_compras)">Comprar</button>
     </div>
 </div>

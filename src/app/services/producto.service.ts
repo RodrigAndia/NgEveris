@@ -10,6 +10,8 @@ export class ProductoService {
     lista_productos: Producto[] = [];
     lista_productos_view: Producto[] = [];
     lista_compras: Producto[] = [];
+    show_buy: boolean=false;
+    count_productos = 0;
 
     constructor(private http: HttpClient){
         this.cargarProductos();
@@ -20,6 +22,18 @@ export class ProductoService {
             this.lista_productos=respuesta.productos;
             console.log(this.lista_productos)
         });
+    }
+
+    public countProductos()
+    {
+        if(this.count_productos>0)
+        {
+            this.show_buy = true;
+        }
+        else
+        {
+            this.show_buy = false;
+        }
     }
 
     public existElement(id:number):number|null
@@ -36,14 +50,6 @@ export class ProductoService {
         return -1;
     }
 
-    // public filter(category:string)
-    // {
-    //     if(category!="")
-    //     {
-                // Uso de Pipe
-    //     }
-    // } 
-
     public comprar(index:number|undefined)
     {
         this.lista_productos.forEach(element => {
@@ -58,6 +64,7 @@ export class ProductoService {
                 {
                     element.cantidad = Number(element.cantidad)-1;
                     this.lista_compras[Number(tmp_index)].cantidad = Number(this.lista_compras[Number(tmp_index)].cantidad)+1;
+                    this.count_productos++;
                 }
             }
             else
@@ -67,10 +74,12 @@ export class ProductoService {
                 newElement.cantidad=1;
                 this.lista_compras.push(newElement);
                 element.cantidad = Number(element.cantidad)-1;
+                this.count_productos++;
             }
             console.log(this.lista_compras);
         }
         });
+        this.countProductos();
     }
 
     public eliminar(index:number|undefined)
@@ -83,6 +92,7 @@ export class ProductoService {
                 if(Number(element.cantidad)>0)
                 {
                     element.cantidad = Number(element.cantidad)-1; //Le restamos al producto
+                    this.count_productos--;
                 }
             }
         });
@@ -96,6 +106,7 @@ export class ProductoService {
                 }
             }
         });
+        this.countProductos();
     }
 
 }

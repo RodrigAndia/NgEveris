@@ -1,10 +1,13 @@
 <div class="container-fluid rg-container">
     <div class="row justify-content-around">
+        <div class="form-group product-search">
+            <input type="text" class="forms-control" placeholder="Buscar.." />
+        </div>
         <div class="col-sm-12 col-lg-8">
             <app-product></app-product>
         </div>
         <div class="col-sm-12 col-lg-3">
-            <app-aside></app-aside>
+            <app-aside [lista_compras]="lista_compras" (propagar)="capturarVariable($event)"></app-aside>
         </div>
     </div>
 </div>

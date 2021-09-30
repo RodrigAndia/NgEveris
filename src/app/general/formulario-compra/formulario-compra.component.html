@@ -1,0 +1,33 @@
+<div class="card mt-5 mb-5" *ngIf="in_process">
+    <div class="card-body">
+        <h2 class="text-center pb-3">Tarjeta de pago</h2>
+        {{mensaje}}
+        <form (ngSubmit)="insertar()">
+            <div class="mb-3">
+                <select class="form-select" [(ngModel)]="tarjeta" name="tarjeta" aria-label="Default select example">
+                    <option value="credito">Credito</option>
+                    <option value="debito">Debito</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="nombre" name="nombre" type="string" class="form-control" id="floatingInput" placeholder="calle larga">
+                <label for="floatingInput">Nombre del propietario</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="numero" name="numero" type="number" class="form-control" id="floatingInput" placeholder="los andes">
+                <label for="floatingInput">Numero de tarjeta</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="codigo" name="codigo" type="password" class="form-control" id="floatingInput" placeholder="metropolitana">
+                <label for="floatingInput">Codigo de seguridad</label>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Fecha de expiración</span>
+                <input type="month" [(ngModel)]="expiracion" name="expiracion" class="form-control" placeholder="Mes" aria-label="Email">
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

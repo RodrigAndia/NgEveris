@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductoService } from '../../services/producto.service';
+import { Producto } from '../../interfaces/producto.interface';
 
 @Component({
   selector: 'app-producto',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductoComponent implements OnInit {
 
-  constructor() { }
+  @Input() lista_compras: Producto[] = [];
+  constructor(public productoService: ProductoService) { }
 
   ngOnInit(): void {
+  }
+
+  capturarVariable(lista_compras: any): void {
+    this.lista_compras=lista_compras;
+    console.log("capturarVariable...", lista_compras);
   }
 
 }

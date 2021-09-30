@@ -1,0 +1,30 @@
+<div class="card mt-5 mb-5">
+    <div class="card-body">
+        <h2 class="text-center pb-3">Direccion de despacho</h2>
+        <form (ngSubmit)="insertar()">
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="pais" name="pais" type="string" class="form-control" id="floatingInput" placeholder="chile">
+                <label for="floatingInput">Pais</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="calle" name="calle" type="string" class="form-control" id="floatingInput" placeholder="calle larga">
+                <label for="floatingInput">Calle</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="ciudad" name="ciudad" type="string" class="form-control" id="floatingInput" placeholder="los andes">
+                <label for="floatingInput">Ciudad</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="region" name="region" type="string" class="form-control" id="floatingInput" placeholder="metropolitana">
+                <label for="floatingInput">Region</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input [(ngModel)]="cPostal" name="cPostal" type="string" class="form-control" id="floatingInput" placeholder="9310000">
+                <label for="floatingInput">Codigo Postal</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

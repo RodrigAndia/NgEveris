@@ -1,3 +1,9 @@
-.rg-container{
-    background:rgba(0, 0, 0, .1);
+.rg-container {
+    background: rgba(0, 0, 0, .1);
+}
+
+.product-search {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 90%;
 }
